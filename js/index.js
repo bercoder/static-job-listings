@@ -12,7 +12,7 @@ const filters = {
 
 const getData = async () => {
     try{
-        const res = await fetch('../data.json')
+        const res = await fetch('js/data.json')
         const data = await res.json()
         return data
     }
