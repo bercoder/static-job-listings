@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+:root{
+    --dark-cyan-color: hsl(180, 29%, 50%);
+    --light-gray-color: hsl(180, 52%, 96%);
+    --light-grayish: hsl(180, 31%, 95%);
+    --dark-grayish: hsl(180, 8%, 52%);
+    --very-dark-grayish: hsl(180, 14%, 20%);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--light-gray-color);
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.5rem;
+}
+
+.container{
+    min-width: 375px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header{
+    background-color: var(--dark-cyan-color);
+    background-image: url('../images/bg-header-mobile.svg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+}
+
+main{
+    position: relative;
+}
+
+#filters, #content article{
+    position: relative;
+    margin: 30px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+#content{
+    padding-top: 40px
+}
+
+#filters{
+    display: none;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: -60px;
+    height: auto;
+}
+
+.company{
+    display: flex;
+    align-items: center;
+    margin: 20px 0 5px
+}
+
+.company h3{
+    color: var(--dark-cyan-color);
+    margin-right: 7px;
+}
+
+.company span{
+    background-color: var(--light-grayish);
+    color: white;
+    display: inline-block;
+    margin: 0 3px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 7px;
+}
+
+span.new{
+    background-color: var(--dark-cyan-color);
+}
+
+span.featured{
+    background-color: black;
+}
+
+article.featured{
+    border-left: 5px solid var(--dark-cyan-color);
+}
+
+article ul.details{
+    margin: 10px 0;
+}
+
+article ul.details li{
+    color: var(--dark-grayish);
+    font-size: 1.2rem;
+    display: inline
+}
+
+article ul.details li:not(:last-child):after{
+    content: " - ";
+}
+
+#filters span.close{
+    background: var(--dark-cyan-color);
+    color: white;
+    cursor: pointer;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+#filters span.close:hover{
+    background-color: black;
+}
+
+#content .avatar{
+    position: absolute;
+    left: 10px;
+    top: -24px;
+}
+
+#content ul.tags{
+    border-top: 1px solid var(--dark-grayish);
+    margin: 10px 0;
+    padding-top: 5px;
+}
+
+.filterList > div,
+ul.tags li{
+    background-color: var(--light-grayish);
+    color: var(--dark-cyan-color);
+    display: inline-block;
+    margin: 5px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 2px;
+}
+
+#content ul.tags li{
+    padding: 7px;
+    cursor: pointer
+}
+#content ul.tags li:hover{
+    background-color: var(--dark-cyan-color);
+    color: white
+}
+
+#filters button{
+    background-color: transparent;
+    border: none;
+    color: var(--dark-grayish);
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 7px
+}
+
+.filterList div{
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.filterList div span{
+    padding: 7px;
+}
+
+.filterList div span.close:hover{
+    background: var(--very-dark-grayish);
+}
+
+.clic{
+    animation: .35s clic ;
+}
+
+@keyframes clic {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    40% {
+        transform: rotate(-30deg) scale(1);
+    }
+    60% {
+        transform: scale(1.2);
+        background-color: red;
+        color: white
+    }
+    80% {
+        transform: rotate(30deg) scale(.7);
+    }
+    90% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--light-grayish);
+    }
+}
+
+.fadeOut{
+    animation: fade .5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    article {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #content ul.tags{
+        border-top: none;
+    }
+
+    .tags-container{
+        align-self: center;
+    } 
+}
